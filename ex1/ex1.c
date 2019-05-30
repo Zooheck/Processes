@@ -12,18 +12,20 @@ int main(void)
     int returnCode = fork();
     if (returnCode < 0)
     {
-        printf("Failed to create new process.");
+        printf("Failed to create new process.\n");
         exit(1);
     }
     else if (returnCode == 0)
     {
-        printf("This is the child.");
+        printf("This is the child.\n");
         x = 0;
+        printf("X is %d\n", x);
     }
     else
     {
-        printf("This is the parent.");
+        printf("This is the parent.\n");
         x = 7;
+        printf("X is %d\n", x);
     }
 
     return 0;
