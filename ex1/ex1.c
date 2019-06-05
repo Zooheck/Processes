@@ -8,7 +8,25 @@
 
 int main(void)
 {
-    // Your code here
+    int x = 100;
+    int returnCode = fork();
+    if (returnCode < 0)
+    {
+        printf("Failed to create new process.\n");
+        exit(1);
+    }
+    else if (returnCode == 0)
+    {
+        printf("This is the child.\n");
+        x = 0;
+        printf("X is %d\n", x);
+    }
+    else
+    {
+        printf("This is the parent.\n");
+        x = 7;
+        printf("X is %d\n", x);
+    }
 
     return 0;
 }
